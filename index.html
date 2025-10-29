@@ -6,25 +6,47 @@
     
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     
-    <title>My Retro Website</title>
+    <title>파일 디펜스 (File Defense)</title>
     
     <style>
         /* 페이지 전체에 윈도우 98 기본 배경색(틸) 적용 */
         body {
             background-color: #008080;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh; /* 최소 높이 지정 */
-            font-family: "98.css", sans-serif; /* 폰트도 적용 (선택 사항) */
+            padding: 2rem; /* 창이 너무 붙지 않게 여백 추가 */
+        }
+        
+        /* 컨텐츠를 담을 메인 창 */
+        .main-window {
+            width: 640px;
+            max-width: 90%; /* 모바일 화면 배려 */
+            margin: 2rem auto; /* 페이지 중앙 정렬 */
+        }
+
+        /* 유튜브 영상 반응형 처리를 위한 스타일 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 비율 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            border: 2px solid;
+            border-color: var(--button-shadow) var(--button-highlight) var(--button-highlight) var(--button-shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="window" style="width: 350px">
+    <div class="window main-window">
         <div class="title-bar">
-            <div class="title-bar-text">My Website.exe</div>
+            <div class="title-bar-text">파일 디펜스 (File Defense)</div>
             <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
@@ -32,12 +54,42 @@
             </div>
         </div>
         <div class="window-body">
-            <p style="text-align: center;"><strong>안녕하세요!</strong></p>
-            <p>98.css를 이용한 제 개인 웹사이트입니다.</p>
             
-            <div class="field-row" style="justify-content: flex-end;">
+            <h1 style="text-align: center;">파일 디펜스</h1>
+            
+            <div class="sunken-panel" style="padding: 0.5rem;">
+                <p><strong>'파일'을 배치하고 '압축'해서 바이러스를 막아라!</strong></p>
+                <p>
+                    '파일 디펜스'는 고전 윈도우 98 테마의 디펜스 게임입니다.
+                    플레이어는 파일을 생성하고 배치하며 [cite: 28, 33], 압축 기능을 통해 더 강력한 파일로 조합하여 [cite: 28, 101] 몰려오는 바이러스로부터 '내 컴퓨터'를 지켜야 합니다[cite: 13, 34].
+                </p>
+            </div>
+
+            <fieldset style="margin-top: 1rem;">
+                <legend>플레이 영상</legend>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </fieldset>
+
+            <fieldset style="margin-top: 1rem;">
+                <legend>개발팀</legend>
+                <ul>
+                    <li><b>리더, 프로그래밍:</b> 최윤한 [cite: 19]</li>
+                    <li><b>기획:</b> 이재우 [cite: 20]</li>
+                    <li><b>프로그래밍:</b> 이민혁 [cite: 21]</li>
+                    <li><b>아트:</b> 강래준 [cite: 22]</li>
+                </ul>
+            </fieldset>
+
+            <div class="field-row" style="justify-content: flex-end; margin-top: 1rem;">
                 <button>확인</button>
-                <button>취소</button>
             </div>
         </div>
     </div>
