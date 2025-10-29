@@ -1,0 +1,344 @@
+/* Windows 98 Style CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "MS Sans Serif", "Microsoft Sans Serif", sans-serif;
+    font-size: 11px;
+    background-color: #008080;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px);
+    overflow: hidden;
+}
+
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Window Styles */
+.window {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+    max-width: 800px;
+    width: 90%;
+    max-height: calc(100vh - 150px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title Bar */
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.title-bar-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-bar-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    border: 1px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    background: #c0c0c0;
+    font-size: 8px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.title-bar-controls button:active {
+    border-color: #000000 #ffffff #ffffff #000000;
+}
+
+/* Window Body */
+.window-body {
+    background: #c0c0c0;
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.content {
+    background: white;
+    padding: 20px;
+    border: 1px solid #808080;
+}
+
+/* Typography */
+h1 {
+    font-size: 24px;
+    color: #000080;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    color: #000080;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.game-card {
+    background: #f0f0f0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+.game-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.game-card h3 {
+    color: #000080;
+    margin-bottom: 8px;
+}
+
+.game-card p {
+    font-size: 11px;
+    color: #000000;
+}
+
+/* Buttons */
+.win98-button {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    padding: 8px 20px;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.win98-button:active {
+    border-color: #000000 #ffffff #ffffff #000000;
+    padding: 9px 19px 7px 21px;
+}
+
+.win98-button:focus {
+    outline: 1px dotted #000000;
+    outline-offset: -4px;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    z-index: 1000;
+}
+
+.start-button {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    padding: 2px 8px;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 5px;
+}
+
+.start-button:active {
+    border-color: #000000 #ffffff #ffffff #000000;
+}
+
+.start-icon {
+    font-size: 14px;
+}
+
+.taskbar-items {
+    flex: 1;
+    display: flex;
+    gap: 2px;
+}
+
+.taskbar-item {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding: 3px 8px;
+    font-size: 11px;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.taskbar-item.active {
+    border-color: #ffffff #000000 #000000 #ffffff;
+    background: #c0c0c0;
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 5px;
+    border-left: 1px solid #808080;
+    margin-left: 5px;
+}
+
+.tray-icon {
+    font-size: 12px;
+}
+
+.clock {
+    font-size: 11px;
+    padding: 2px 5px;
+    border: 1px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    background: #c0c0c0;
+}
+
+/* Scrollbar Styling (Windows 98 style) */
+.window-body::-webkit-scrollbar {
+    width: 16px;
+}
+
+.window-body::-webkit-scrollbar-track {
+    background: #c0c0c0;
+}
+
+.window-body::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+}
+
+.window-body::-webkit-scrollbar-button {
+    height: 16px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .window {
+        margin: 20px auto;
+        width: 95%;
+        max-height: calc(100vh - 80px);
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .taskbar-item {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .system-tray .tray-icon {
+        display: none;
+    }
+}
