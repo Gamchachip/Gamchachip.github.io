@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    
+    <title>My Retro Website</title>
+    
+    <style>
+        /* 페이지 전체에 윈도우 98 기본 배경색(틸) 적용 */
+        body {
+            background-color: #008080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh; /* 최소 높이 지정 */
+            font-family: "98.css", sans-serif; /* 폰트도 적용 (선택 사항) */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="window" style="width: 350px">
+        <div class="title-bar">
+            <div class="title-bar-text">My Website.exe</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p style="text-align: center;"><strong>안녕하세요!</strong></p>
+            <p>98.css를 이용한 제 개인 웹사이트입니다.</p>
+            
+            <div class="field-row" style="justify-content: flex-end;">
+                <button>확인</button>
+                <button>취소</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
