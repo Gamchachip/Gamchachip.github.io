@@ -49,6 +49,14 @@
             height: auto;
             display: block;
         }
+
+        /* 모바일 화면에서 제목 폰트 크기 조절 (추가된 부분) */
+        @media (max-width: 600px) {
+            .window-body h1 {
+                font-size: 1.25rem; /* 기본 1.5rem(24px)에서 20px 정도로 줄임 */
+                /* 폰트 크기를 줄여서 좁은 화면에서도 제목이 깨지지 않게 합니다. */
+            }
+        }
     </style>
 </head>
 <body>
@@ -165,3 +173,4 @@
 
 </body>
 </html>
+
