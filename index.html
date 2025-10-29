@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamchachip - Windows 98</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop">
+        <div class="desktop-icons">
+            <div class="icon" onclick="openWindow('about')">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23008080' width='32' height='32'/%3E%3Cpath fill='%23fff' d='M8 8h16v2H8zm0 4h16v2H8zm0 4h12v2H8z'/%3E%3C/svg%3E" alt="About">
+                <span>About Me</span>
+            </div>
+            <div class="icon" onclick="openWindow('projects')">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ffff00' d='M6 4l4 6-4 6h20l-4-6 4-6z'/%3E%3Cpath fill='%23808000' d='M6 4v12h20V4z' opacity='0.3'/%3E%3C/svg%3E" alt="Projects">
+                <span>Projects</span>
+            </div>
+            <div class="icon" onclick="openWindow('contact')">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23c0c0c0' width='28' height='20' x='2' y='6'/%3E%3Cpath fill='%23000080' d='M2 6l14 10 14-10v2L16 18 2 8z'/%3E%3C/svg%3E" alt="Contact">
+                <span>Contact</span>
+            </div>
+            <div class="icon" onclick="openWindow('recycle')">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23808080' d='M16 4l-6 10h12z'/%3E%3Cpath fill='%23808080' d='M8 16l-6 10h12z'/%3E%3Cpath fill='%23808080' d='M24 16l-6 10h12z'/%3E%3C/svg%3E" alt="Recycle Bin">
+                <span>Recycle Bin</span>
+            </div>
+        </div>
+
+        <!-- About Window -->
+        <div id="about-window" class="window" style="display: none;">
+            <div class="title-bar" onmousedown="dragStart(event, 'about-window')">
+                <div class="title-bar-text">About Me</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('about')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h2>안녕하세요! 👋</h2>
+                <p>Windows 98 스타일의 웹사이트에 오신 것을 환영합니다!</p>
+                <p>이것은 추억의 Windows 98 UI를 재현한 개인 웹사이트입니다.</p>
+                <hr>
+                <p><strong>이름:</strong> Gamchachip</p>
+                <p><strong>직업:</strong> Developer</p>
+                <p><strong>관심사:</strong> Retro Computing, Web Development</p>
+            </div>
+        </div>
+
+        <!-- Projects Window -->
+        <div id="projects-window" class="window" style="display: none;">
+            <div class="title-bar" onmousedown="dragStart(event, 'projects-window')">
+                <div class="title-bar-text">Projects</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('projects')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h2>프로젝트</h2>
+                <div class="field-row">
+                    <label>프로젝트 목록:</label>
+                    <select>
+                        <option>Windows 98 웹사이트</option>
+                        <option>레트로 게임 클론</option>
+                        <option>개인 블로그</option>
+                    </select>
+                </div>
+                <hr>
+                <p>곧 더 많은 프로젝트가 추가될 예정입니다...</p>
+                <div class="button-group">
+                    <button>확인</button>
+                    <button onclick="closeWindow('projects')">취소</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div id="contact-window" class="window" style="display: none;">
+            <div class="title-bar" onmousedown="dragStart(event, 'contact-window')">
+                <div class="title-bar-text">Contact</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('contact')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h2>연락처</h2>
+                <div class="field-row">
+                    <label for="name">이름:</label>
+                    <input id="name" type="text" />
+                </div>
+                <div class="field-row">
+                    <label for="email">이메일:</label>
+                    <input id="email" type="email" />
+                </div>
+                <div class="field-row">
+                    <label for="message">메시지:</label>
+                    <textarea id="message" rows="4"></textarea>
+                </div>
+                <div class="button-group">
+                    <button onclick="alert('메시지가 전송되었습니다! (데모용)')">보내기</button>
+                    <button onclick="closeWindow('contact')">취소</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recycle Bin Window -->
+        <div id="recycle-window" class="window" style="display: none;">
+            <div class="title-bar" onmousedown="dragStart(event, 'recycle-window')">
+                <div class="title-bar-text">Recycle Bin</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('recycle')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>휴지통이 비어 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button class="start-button" onclick="toggleStartMenu()">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23ff0000' width='16' height='16'/%3E%3Cpath fill='%23fff' d='M3 3h10v10H3z' opacity='0.3'/%3E%3C/svg%3E" alt="Start">
+            <span>Start</span>
+        </button>
+        <div class="taskbar-buttons" id="taskbar-buttons"></div>
+        <div class="system-tray">
+            <span id="clock"></span>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="start-menu" class="start-menu" style="display: none;">
+        <div class="start-menu-sidebar">
+            <div class="start-menu-title">Windows<span>98</span></div>
+        </div>
+        <div class="start-menu-content">
+            <div class="menu-item" onclick="openWindow('about'); toggleStartMenu()">
+                <span>📄</span> About Me
+            </div>
+            <div class="menu-item" onclick="openWindow('projects'); toggleStartMenu()">
+                <span>📁</span> Projects
+            </div>
+            <div class="menu-item" onclick="openWindow('contact'); toggleStartMenu()">
+                <span>✉️</span> Contact
+            </div>
+            <hr>
+            <div class="menu-item" onclick="alert('로그오프 기능은 데모용입니다.')">
+                <span>🚪</span> Log Off...
+            </div>
+            <div class="menu-item" onclick="alert('시스템 종료 기능은 데모용입니다.')">
+                <span>🔌</span> Shut Down...
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
