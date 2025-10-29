@@ -1,0 +1,374 @@
+/* Windows 98 Style CSS */
+:root {
+    --surface: #c0c0c0;
+    --button-highlight: #ffffff;
+    --button-face: #c0c0c0;
+    --button-shadow: #808080;
+    --button-dark-shadow: #000000;
+    --window-frame: #0a0a0a;
+    --dialog-blue: #000080;
+    --desktop-teal: #008080;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+    background: var(--desktop-teal);
+    overflow: hidden;
+    height: 100vh;
+    cursor: default;
+}
+
+.desktop {
+    height: calc(100vh - 28px);
+    position: relative;
+    padding: 10px;
+}
+
+/* Desktop Icons */
+.desktop-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.icon:hover {
+    background: rgba(0, 0, 128, 0.3);
+    outline: 1px dotted white;
+}
+
+.icon img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+.icon span {
+    font-size: 11px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Windows */
+.window {
+    position: absolute;
+    background: var(--button-face);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dark-shadow);
+    border-bottom: 2px solid var(--button-dark-shadow);
+    box-shadow: 1px 1px 0 var(--button-shadow);
+    min-width: 300px;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.window.active {
+    z-index: 1000;
+}
+
+/* Title Bar */
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    padding: 2px 3px 2px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.title-bar-text {
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding-left: 3px;
+}
+
+.title-bar-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    padding: 0;
+    border: none;
+    background: var(--button-face);
+    border-top: 1px solid var(--button-highlight);
+    border-left: 1px solid var(--button-highlight);
+    border-right: 1px solid var(--button-dark-shadow);
+    border-bottom: 1px solid var(--button-dark-shadow);
+    box-shadow: inset -1px -1px 0 var(--button-shadow);
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.title-bar-controls button:active {
+    border-top: 1px solid var(--button-dark-shadow);
+    border-left: 1px solid var(--button-dark-shadow);
+    border-right: 1px solid var(--button-highlight);
+    border-bottom: 1px solid var(--button-highlight);
+    box-shadow: none;
+}
+
+.title-bar-controls button:nth-child(1)::before {
+    content: '—';
+}
+
+.title-bar-controls button:nth-child(2)::before {
+    content: '□';
+}
+
+.title-bar-controls button:nth-child(3)::before {
+    content: '×';
+}
+
+/* Window Body */
+.window-body {
+    padding: 8px;
+    margin: 2px;
+    background: var(--button-face);
+}
+
+.window-body h2 {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.window-body p {
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+.window-body hr {
+    border: none;
+    border-top: 1px solid var(--button-shadow);
+    border-bottom: 1px solid var(--button-highlight);
+    margin: 8px 0;
+}
+
+/* Form Elements */
+.field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.field-row label {
+    font-size: 11px;
+    margin-right: 8px;
+    min-width: 60px;
+}
+
+.field-row input,
+.field-row textarea,
+.field-row select {
+    flex: 1;
+    border: 1px solid var(--button-dark-shadow);
+    border-top-color: var(--button-shadow);
+    border-left-color: var(--button-shadow);
+    padding: 3px 4px;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+}
+
+.field-row textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    background: var(--button-face);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dark-shadow);
+    border-bottom: 2px solid var(--button-dark-shadow);
+    box-shadow: 1px 1px 0 var(--button-shadow);
+    padding: 4px 12px;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+    min-width: 75px;
+    cursor: pointer;
+}
+
+button:active {
+    border-top: 2px solid var(--button-dark-shadow);
+    border-left: 2px solid var(--button-dark-shadow);
+    border-right: 2px solid var(--button-highlight);
+    border-bottom: 2px solid var(--button-highlight);
+    box-shadow: none;
+    padding: 5px 11px 3px 13px;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: var(--button-face);
+    border-top: 2px solid var(--button-highlight);
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    gap: 2px;
+    z-index: 10000;
+}
+
+.start-button {
+    height: 24px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    min-width: auto;
+}
+
+.start-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.taskbar-buttons {
+    flex: 1;
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+}
+
+.taskbar-button {
+    height: 22px;
+    padding: 2px 6px;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.taskbar-button.active {
+    border-top: 2px solid var(--button-dark-shadow);
+    border-left: 2px solid var(--button-dark-shadow);
+    border-right: 2px solid var(--button-highlight);
+    border-bottom: 2px solid var(--button-highlight);
+    box-shadow: none;
+}
+
+.system-tray {
+    height: 22px;
+    border-top: 1px solid var(--button-shadow);
+    border-left: 1px solid var(--button-shadow);
+    border-right: 1px solid var(--button-highlight);
+    border-bottom: 1px solid var(--button-highlight);
+    padding: 2px 8px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+}
+
+/* Start Menu */
+.start-menu {
+    position: fixed;
+    bottom: 28px;
+    left: 2px;
+    width: 200px;
+    background: var(--button-face);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dark-shadow);
+    border-bottom: 2px solid var(--button-dark-shadow);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+}
+
+.start-menu-sidebar {
+    background: linear-gradient(to bottom, #000080, #1084d0);
+    color: white;
+    padding: 4px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    float: left;
+    height: 100%;
+}
+
+.start-menu-title {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.start-menu-title span {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.start-menu-content {
+    margin-left: 32px;
+    padding: 2px;
+}
+
+.menu-item {
+    padding: 4px 20px 4px 4px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-item:hover {
+    background: #000080;
+    color: white;
+}
+
+.menu-item span {
+    font-size: 16px;
+}
+
+/* Responsive positioning for windows */
+#about-window {
+    top: 100px;
+    left: 120px;
+}
+
+#projects-window {
+    top: 140px;
+    left: 160px;
+}
+
+#contact-window {
+    top: 180px;
+    left: 200px;
+}
+
+#recycle-window {
+    top: 220px;
+    left: 240px;
+}
