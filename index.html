@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- 98.css CDN 링크 -->
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     
     <title>File Tower Defence(파일 타워 디펜스)</title>
@@ -29,6 +30,7 @@
             height: 0;
             overflow: hidden;
             margin-top: 1rem;
+            /* 98.css의 sunken-panel 스타일을 직접 적용 */
             border: 2px solid;
             border-color: var(--button-shadow) var(--button-highlight) var(--button-highlight) var(--button-shadow);
         }
@@ -39,6 +41,13 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        /* 이미지 스타일 */
+        .feature-image {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
@@ -57,19 +66,26 @@
             
             <h1 style="text-align: center;">File Tower Defence</h1>
             
+            <!-- 기본 게임 소개 -->
             <div class="sunken-panel" style="padding: 0.5rem;">
                 <p><strong>'파일'을 배치하고 '압축'해서 바이러스를 막아라!</strong></p>
                 <p>
                     '파일 디펜스'는 고전 윈도우 98 테마의 디펜스 게임입니다.
-                    플레이어는 파일을 생성하고 배치하며 [cite: 28, 33], 압축 기능을 통해 더 강력한 파일로 조합하여 [cite: 28, 101] 몰려오는 바이러스로부터 '내 컴퓨터'를 지켜야 합니다[cite: 13, 34].
+                    플레이어는 파일을 생성하고 배치하며 압축 기능을 통해 더 강력한 파일로 조합하여 몰려오는 바이러스로부터 '내 컴퓨터'를 지켜야 합니다.
                 </p>
             </div>
 
+            <!-- 플레이 영상 -->
             <fieldset style="margin-top: 1rem;">
                 <legend>플레이 영상</legend>
                 <div class="video-container">
+                    <!-- 
+                      *** 중요 ***
+                      유튜브 링크를 "watch?v="에서 "embed/"로 수정했습니다. 
+                      이렇게 해야 iframe에서 재생됩니다.
+                    -->
                     <iframe 
-                        src="https://www.youtube.com/watch?v=r0Pea72TYqY" 
+                        src="https://www.youtube.com/embed/N7MkAzrwHjI" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -78,6 +94,58 @@
                 </div>
             </fieldset>
 
+            <!-- *** 새로 추가된 게임 특징 섹션 *** -->
+            <fieldset style="margin-top: 1rem;">
+                <legend>주요 게임 특징</legend>
+
+                <!-- 1. 바탕화면 -->
+                <h3>1. 바탕화면에서 벌어지는 디펜스 게임</h3>
+                <p style="margin-top: 0.5rem;">
+                    고전 윈도우 98 바탕화면을 배경으로, 바이러스의 침공을 막아내는 디펜스 게임입니다.
+                </p>
+                <!-- 98.css 스타일의 이미지 프레임 -->
+                <div class="sunken-panel" style="padding: 4px; margin-top: 0.5rem;">
+                    <!-- 
+                      ↓↓↓ 여기에 '바탕화면' 관련 스크린샷 이미지 주소를 넣어주세요. ↓↓↓
+                    -->
+                    <img src="./images/1.jpg" 
+                         alt="바탕화면에서 벌어지는 디펜스 게임" 
+                         class="feature-image">
+                </div>
+
+                <!-- 2. 파일 압축 -->
+                <h3 style="margin-top: 1.5rem;">2. 파일을 압축하라!</h3>
+                <p style="margin-top: 0.5rem;">
+                    기본 파일들을 폴더에 넣어 '압축'하면, 여러 파일의 능력을 가진 강력한 '.zip' 파일이나 특별한 상위 파일로 조합할 수 있습니다.
+                </p>
+                <div class="sunken-panel" style="padding: 4px; margin-top: 0.5rem;">
+                    <!-- 
+                      ↓↓↓ 여기에 '파일 압축' 관련 스크린샷 이미지 주소를 넣어주세요. ↓↓↓
+                    -->
+                    <img src="./images/2.jpg" 
+                         alt="파일을 압축하라!" 
+                         class="feature-image">
+                </div>
+
+                <!-- 3. 바이러스 감염 -->
+                <h3 style="margin-top: 1.5rem;">3. 바이러스 감염</h3>
+                <p style="margin-top: 0.5rem;">
+                    바이러스는 '랜섬웨어', '애드웨어' 감염 등 고전 운영체제 테마의 방해 요소를 일으켜 플레이어를 괴롭힙니다.
+                </p>
+                <div class="sunken-panel" style="padding: 4px; margin-top: 0.5rem;">
+                    <!-- 
+                      ↓↓↓ 여기에 '바이러스 감염' 관련 스크린샷 이미지 주소를 넣어주세요. ↓↓↓
+                    -->
+                    <img src="./images/3.jpg" 
+                         alt="바이러스 감염" 
+                         class="feature-image">
+                </div>
+
+            </fieldset>
+            <!-- *** 게임 특징 섹션 끝 *** -->
+
+
+            <!-- 개발팀 -->
             <fieldset style="margin-top: 1rem;">
                 <legend>개발팀</legend>
                 <ul>
@@ -88,6 +156,7 @@
                 </ul>
             </fieldset>
 
+            <!-- 확인 버튼 -->
             <div class="field-row" style="justify-content: flex-end; margin-top: 1rem;">
                 <button>확인</button>
             </div>
